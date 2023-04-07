@@ -2,6 +2,8 @@ import aiohttp
 import aiofiles
 import json
 import base64
+from captcha_error import CaptchaError
+
 
 class AsyncCapSolver:
     __session = None
@@ -45,7 +47,7 @@ class AsyncCapSolver:
         print(json.dumps(data, indent=4))
 
         response = await self.__post('createTask', data)
-        print(data)
+
 
 
 
@@ -74,10 +76,7 @@ class AsyncCapSolver:
             return j
 
 
-class CaptchaError(Exception):
-    def __init__(self, error_id, description):
-        message = f'{error_id}: {description}'
-        super().__init__(message)
+
 
 
 
