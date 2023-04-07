@@ -4,7 +4,7 @@ setup(
     name='CapSolverPython',
     version='1.0.0',
     packages=[''],
-    url='',
+    url='https://github.com/Eli-Chandler/CapSolverPython',
     license='MIT',
     author='Eli Chandler',
     author_email='eli.chandler@gmail.com',
