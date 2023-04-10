@@ -46,7 +46,91 @@ class AsyncCapSolver:
         return await self.__submit_task('AntiCloudflareTask', webSiteURL=url, webSiteKey=site_key, proxy=proxy,
                                         metadata=metadata)
 
+    async def solve_cloudflare_5_second_challenge(self, url: str, site_key: str, proxy: str, html:str, action: str = None,
+                                         cdata: str = None):
+        metadata = {
+            'type': 'challenge',
+            'action': action,
+            'cdata': cdata
+        }
+        return await self.__submit_task('AntiCloudflareTask', webSiteURL=url, webSiteKey=site_key, proxy=proxy,
+                                        metadata=metadata, html=html)
+
+    async def solve_hcaptcha(self, url: str, site_key: str, method:str ='HCaptchaTurboTaskProxyLess', is_invisible: bool=None, proxy: str=None, proxy_is_ipv6: bool=None, enterprise_payload: dict=None, user_agent: str=None):
+        return await self.__submit_task(method,
+                                        websiteUrl=url,
+                                        websiteKey=site_key,
+                                        isInvisible=is_invisible,
+                                        proxy=proxy,
+                                        enableIPV6=proxy_is_ipv6,
+                                        enterprisePayload=enterprise_payload,
+                                        userAgent=user_agent)
+
+
+    async def solve_funcaptcha(self, url, site_public_key, method='FunCaptchaTask', funcaptcha_api_js_subdomain=None, data=None, proxy=None):
+        return await self.__submit_task(method,
+                                        websiteURL=url,
+                                        websitePublicKey=site_public_key,
+                                        funcaptchaApiJSSubdomain=funcaptcha_api_js_subdomain,
+                                        data=data,
+                                        proxy=proxy)
+
+
+    async def solve_geetest(self, url: str, gt_field: str, method='GeeTestTaskProxyLess', challenge: str=None, captcha_id: str=None, geetest_api_server_subdomain: str=None, proxy: str=None):
+        return await self.__submit_task(method,
+                                        websiteURL=url,
+                                        gt=gt_field,
+                                        challenge=challenge,
+                                        captchaId=captcha_id,
+                                        geetestApiServerSubdomain=geetest_api_server_subdomain,
+                                        proxy=proxy)
+
+
+    async def solve_recaptcha_v2(self, url:str, site_key:str, method:str='ReCaptchaV2TaskProxyLess', proxy:str=None, enterprise_payload:dict=None, is_invisible:bool=None, api_domain:str=None, user_agent:str=None, cookies:list=None):
+        return await self.__submit_task(method,
+                                        websiteURL=url,
+                                        websiteKey=site_key,
+                                        proxy=proxy,
+                                        enterprisePayload=enterprise_payload,
+                                        isInvisible=is_invisible,
+                                        apiDomain=api_domain,
+                                        userAgent=user_agent,
+                                        cookies=cookies)
+
+    async def solve_recaptcha_v3(self, url:str, site_key:str, page_action:str, method:str='ReCaptchaV3TaskProxyLess', minimum_score:float=None, proxy:str=None, enterprise_payload:dict=None, api_domain:str=None, user_agent:str=None, cookies:list=None):
+        return await self.__submit_task(method,
+                                        websiteURL=url,
+                                        websiteKey=site_key,
+                                        pageAction=page_action,
+                                        minScore=minimum_score,
+                                        proxy=proxy,
+                                        enterprisePayload=enterprise_payload,
+                                        apiDomain=api_domain,
+                                        userAgent=user_agent,
+                                        cookies=cookies)
+
+    async def solve_mtcaptcha(self, url:str, site_key:str, proxy:str):
+        await self.__submit_task('MtCaptchaTask',
+                                 websiteURL=url,
+                                 websiteKey=site_key,
+                                 proxy=proxy)
+
+    async def solve_datadome(self, url, captcha_url, proxy, user_agent):
+        await self.__submit_task('DatadomeSliderTask',
+                                 websiteURL=url,
+                                 captchaUrl=captcha_url,
+                                 proxy=proxy,
+                                 userAgent=user_agent)
+
+
+
+
+
+
+
     async def __submit_task(self, type: str, app_id=None, **kwargs):
+
+        kwargs = {k:v for k, v in kwargs.items() if v is not None}
 
         data = {
             # "appId": app_id,
