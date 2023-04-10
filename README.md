@@ -6,6 +6,9 @@ CapSolverPython is an elegant API implementation of Capsolver.com for python
 * All endpoints/inputs (soon)
 * Error handling
 
+### Installation
+```pip install aiofiles```
+(https://pypi.org/project/aiocapsolver/)
 ### Usage
 
 ```python

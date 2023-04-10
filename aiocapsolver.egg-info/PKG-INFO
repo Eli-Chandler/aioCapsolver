@@ -1,11 +1,14 @@
 Metadata-Version: 2.1
 Name: aiocapsolver
-Version: 0.0.1
+Version: 0.0.2
 Summary: Async API wrapper for capsolver.com
+Home-page: UNKNOWN
 Author: Eli Chandler
 Author-email: eli.chandler@gmail.com
+License: UNKNOWN
 Keywords: python,captcha,solver,capsolver,api,wrapper
-Classifier: Development Status :: Testing
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
 Classifier: Intended Audience :: Developers
 Classifier: Programming Language :: Python :: 3
 Classifier: Operating System :: Unix
@@ -23,6 +26,9 @@ CapSolverPython is an elegant API implementation of Capsolver.com for python
 * All endpoints/inputs (soon)
 * Error handling
 
+### Installation
+```pip install aiofiles```
+(https://pypi.org/project/aiocapsolver/)
 ### Usage
 
 ```python
@@ -41,3 +47,4 @@ Currently only supports:
 * Image captcha solving
 
 Watch this space for future additions
+
