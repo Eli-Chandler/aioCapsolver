@@ -28,7 +28,7 @@ Additionally, if you choose to use a proxy, ensure that the 'method' arguement i
 ```
 await solver.solve_hcaptcha(url, site_key, proxy='http://user:pass@my_proxy:1234',method='HCaptchaTurboTask')
 ```
-as oppsoed to method = 'HCaptchaTurboTaskProxyLess'
+as opposoed to method = 'HCaptchaTurboTaskProxyLess'
 
 you can find these in the official documentation: https://docs.capsolver.com/ for each captcha type. It's possible I will make the library automatically choose the method in the future.
 
