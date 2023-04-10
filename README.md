@@ -18,7 +18,7 @@ solver = AsyncCapSolver(MyCapSolverApiKey)
 
 
 async def myasyncfunction():
-    result = await solver.solve_image_to_text(images / myimage.png)
+    result = await solver.solve_image_to_text(images/myimage.png)
     # This works the same for a task that we have to await the result for, it is done automatically!
     result = await solve.solve_cloudflare_turnstile(url, site_key, proxy)
 ```
