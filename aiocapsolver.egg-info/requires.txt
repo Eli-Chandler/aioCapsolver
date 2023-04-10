@@ -1,0 +1,15 @@
+async-timeout
+build
+certifi
+charset-normalizer
+colorama
+filelock
+idna
+packaging
+platformdirs
+pyproject_hooks
+requests
+tomli
+uritools
+urlextract
+urllib3

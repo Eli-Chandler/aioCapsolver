@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: aiocapsolver
+Version: 0.0.1
+Summary: Async API wrapper for capsolver.com
+Author: Eli Chandler
+Author-email: eli.chandler@gmail.com
+Keywords: python,captcha,solver,capsolver,api,wrapper
+Classifier: Development Status :: Testing
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+# Capsolver.com API for Python
+CapSolverPython is an elegant API implementation of Capsolver.com for python
+
+### Features:
+* Async/Sync support
+* All endpoints/inputs (soon)
+* Error handling
+
+### Usage
+
+```python
+from aiocapsolver.capsolver import AsyncCapSolver
+
+solver = AsyncCapSolver(MyCapSolverApiKey)
+
+
+async def myasyncfunction():
+    result = await solver.solve_image_to_text(images / myimage.png)
+```
+
+### WIP
+Currently only supports:
+* async
+* Image captcha solving
+
+Watch this space for future additions

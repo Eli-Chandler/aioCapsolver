@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+aiocapsolver/__init__.py
+aiocapsolver/capsolver.py
+aiocapsolver/captcha_error.py
+aiocapsolver/solution.py
+aiocapsolver.egg-info/PKG-INFO
+aiocapsolver.egg-info/SOURCES.txt
+aiocapsolver.egg-info/dependency_links.txt
+aiocapsolver.egg-info/requires.txt
+aiocapsolver.egg-info/top_level.txt

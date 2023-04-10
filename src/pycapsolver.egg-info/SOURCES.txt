@@ -1,7 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-src/pycapsolver.egg-info/PKG-INFO
-src/pycapsolver.egg-info/SOURCES.txt
-src/pycapsolver.egg-info/dependency_links.txt
-src/pycapsolver.egg-info/top_level.txt
