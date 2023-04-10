@@ -23,6 +23,9 @@ async def myasyncfunction():
     result = await solve.solve_cloudflare_turnstile(url, site_key, proxy)
 ```
 
+Note that some functions **require** a proxy!
+Additionally, if you choose to use a proxy, ensure that the 'method' arguement is set correctly, you can find these in the official documentation: https://docs.capsolver.com/ for each captcha type
+
 ### WIP
 Currently only supports:
 * async
