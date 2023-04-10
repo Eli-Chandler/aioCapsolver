@@ -2,8 +2,8 @@
 CapSolverPython is an elegant API implementation of Capsolver.com for python
 
 ### Features:
-* Async/Sync support
-* All endpoints/inputs (soon)
+* Async/Sync support(soon)
+* All endpoints/inputs
 * Error handling
 
 ### Installation
