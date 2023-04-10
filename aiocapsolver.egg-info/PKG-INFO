@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: aiocapsolver
-Version: 0.0.2
+Version: 0.0.4
 Summary: Async API wrapper for capsolver.com
 Home-page: UNKNOWN
 Author: Eli Chandler

@@ -1,7 +1,8 @@
 import base64
 import aiofiles
 import aiohttp
-from captcha_error import CaptchaError
+import asyncio
+from aiocapsolver.captcha_error import CaptchaError
 
 
 class AsyncCapSolver:
@@ -21,11 +22,11 @@ class AsyncCapSolver:
         self.__session = aiohttp.ClientSession()
 
     async def get_balance(self) -> float:
-        data = await self.__post('getBalance')
+        data = await self.__post('getBalance', no_task=True)
         return data['balance']
 
     async def get_packages(self) -> list:
-        data = await self.__post('getBalance')
+        data = await self.__post('getBalance', no_task=True)
         return data['balance']
 
     async def solve_image_to_text(self, filepath, module='common', minimum_confidence=0.8, case=True):
@@ -58,7 +59,7 @@ class AsyncCapSolver:
 
         return await self.__post('createTask', data)
 
-    async def __post(self, endpoint, data=None) -> dict:
+    async def __post(self, endpoint, data=None, no_task=False) -> dict:
         if data is None:
             data = {}
 
@@ -76,6 +77,9 @@ class AsyncCapSolver:
 
         if j['errorId'] == 1:
             raise (CaptchaError(j['errorCode'], j['errorDescription']))
+
+        if no_task == True:
+            return j
 
         task_id = j.get('taskId')
         status = j.get('status')
@@ -104,6 +108,7 @@ async def main():
     url = os.environ.get('TESTING_URL')
     sitekey = os.environ.get('TESTING_SITEKEY')
     solver = AsyncCapSolver(api_key)
+    print(await solver.get_balance())
     print(await solver.solve_cloudflare_turnstile(url, sitekey, proxy))
     await solver.close()
 
