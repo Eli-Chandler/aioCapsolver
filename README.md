@@ -1,5 +1,5 @@
 # Capsolver.com API for Python
-CapSolverPython is an elegant API implementation of Capsolver.com for python
+aioCapsolver is an elegant python implementation of the Capsolver.com API
 
 ### Features:
 * Async/Sync support(soon)
