@@ -9,7 +9,7 @@ CapSolverPython is an elegant API implementation of Capsolver.com for python
 ### Usage
 
 ```python
-from capsolver import AsyncCapSolver
+from CapSolver.capsolver import AsyncCapSolver
 
 solver = AsyncCapSolver(MyCapSolverApiKey)
 

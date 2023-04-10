@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: pycapsolver
+Version: 0.0.1
+Summary: A wrapper for capsolver.com API
+Author-email: Eli Chandler <eli.chandler@gmail.com>
+Project-URL: Homepage, https://github.com/Eli-Chandler/CapSolverPython
+Project-URL: Bug Tracker, https://github.com/Eli-Chandler/CapSolverPython/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Capsolver.com API for Python
+CapSolverPython is an elegant API implementation of Capsolver.com for python
+
+### Features:
+* Async/Sync support
+* All endpoints/inputs (soon)
+* Error handling
+
+### Usage
+
+```python
+from CapSolver.capsolver import AsyncCapSolver
+
+solver = AsyncCapSolver(MyCapSolverApiKey)
+
+
+async def myasyncfunction():
+    result = await solver.solve_image_to_text(images / myimage.png)
+```
+
+### WIP
+Currently only supports:
+* async
+* Image captcha solving
+
+Watch this space for future additions
