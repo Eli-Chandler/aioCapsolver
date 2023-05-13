@@ -1,5 +1,6 @@
 # Capsolver.com API for Python
 aioCapsolver is an elegant python implementation of the Capsolver.com API
+[![Downloads](https://static.pepy.tech/badge/aiocapsolver)](https://pepy.tech/project/aiocapsolver)
 
 ### Features:
 * Async/Sync support(soon)
