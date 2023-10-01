@@ -54,7 +54,7 @@ class AsyncCapSolver:
             'action': action,
             'cdata': cdata
         }
-        return await self.__submit_task('AntiCloudflareTask', webSiteURL=url, webSiteKey=site_key, proxy=proxy,
+        return await self.__submit_task('AntiCloudflareTask', webSiteURL=url, proxy=proxy,
                                         metadata=metadata, html=html)
 
     async def solve_hcaptcha(self, url: str, site_key: str, method: str = 'HCaptchaTurboTaskProxyLess', is_invisible: bool = None, proxy: str = None, proxy_is_ipv6: bool = None,
